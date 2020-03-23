@@ -232,10 +232,6 @@ void rtl8821c_hal_init_misc(PADAPTER adapter)
 
 	rtw_hal_set_hwreg(adapter, HW_VAR_RCR, (u8 *)&rcr_bits);
 
-#ifdef CONFIG_XMIT_ACK
-	rtl8821c_set_mgnt_xmit_ack(adapter);
-#endif /*CONFIG_XMIT_ACK*/
-
 	/*Disable BAR, suggested by Scott */
 	rtw_write32(adapter, REG_BAR_MODE_CTRL_8821C, 0x0201ffff);
 	/*Disable secondary CCA 20M,40M?*/

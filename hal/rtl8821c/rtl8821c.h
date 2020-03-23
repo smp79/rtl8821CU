@@ -38,9 +38,6 @@ u8 rtl8821c_phy_init(PADAPTER adapter);
 u8 rtl8821c_init_phy_parameter_mac(PADAPTER adapter);
 
 /* rtl8821c_mac.c */
-#ifdef CONFIG_XMIT_ACK
-u8 rtl8821c_set_mgnt_xmit_ack(_adapter *adapter);
-#endif
 u8 rtl8821c_rx_ba_ssn_appended(PADAPTER);
 u8 rtl8821c_rx_fcs_append_switch(PADAPTER, u8 enable);
 u8 rtl8821c_rx_fcs_appended(PADAPTER);

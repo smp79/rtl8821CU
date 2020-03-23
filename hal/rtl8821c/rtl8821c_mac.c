@@ -18,20 +18,6 @@
 #include <hal_data.h>		/* HAL_DATA_TYPE */
 #include "../hal_halmac.h"	/* Register Definition and etc. */
 
-#ifdef CONFIG_XMIT_ACK
-inline u8 rtl8821c_set_mgnt_xmit_ack(_adapter *adapter)
-{
-	int err;
-
-	/*ack for xmit mgmt frames.*/
-	err = rtw_write32(adapter, REG_FWHW_TXQ_CTRL_8821C, rtw_read32(adapter, REG_FWHW_TXQ_CTRL_8821C) | BIT(12));
-	if (err == _FAIL)
-		return _FAIL;
-
-	return _SUCCESS;
-}
-#endif
-
 inline u8 rtl8821c_rx_ba_ssn_appended(PADAPTER p)
 {
 	return rtw_hal_rcr_check(p, BIT_APP_BASSN_8821C);
